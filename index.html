@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <title>js projex</title>
+    <script src="./new.js"></script>
+</head>
+<body class="bg-blue-200 box-border">
+  <!-- sidebar -->
+<div id="sidebar-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
+<aside class="sidebar">
+  <div class="flex py-3">
+    <h1 class="text-3xl font-bold mx-10 text-cyan-900">js projex</h1>
+    <button id="close-btn"
+      class="fixed right-4 top-4 size-10 bg-transparent text-red-600 transition-all duration-300 hover:text-red-400 hover:rotate-180">X</button>
+  </div>
+  <ul class="flex flex-col text-start mx-4 text-2xl font-semibold p-6 space-y-4 bg-slate-500">
+    <li class="hover:bg-slate-400">
+      <a href="index.html" class="mx-1">home</a>
+    </li>
+    <li class="hover:bg-slate-400">
+      <a href="hex.html" class="mx-1">Hex</a>
+    </li>
+    <li class="hover:bg-slate-400">
+      <a href="#" class="mx-1">projects</a>
+    </li>
+    <li class="hover:bg-slate-400">
+      <a href="#" class="mx-1">contact</a>
+    </li>
+  </ul>
+  <ul class="flex text-xl space-x-8 mx-2 p-4">
+    <li>
+      <a href="https://www.facebook.com">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtBILdC5ouxGYjeaYJPmVqMsSpsItocXSI5A&s" alt="" height="60px" width="60px">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.twitter.com">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiHIZuDb--IJ-q5d97gWm1W2eyLj7BePcWnQ&s" alt="" height="50px" width="50px">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJ2v3UmTqHtJDSVPTQAd0vbTXTt7EbH84WA&s" alt="" height="50px" width="50px">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com">
+        <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="" height="55px" width="55px">
+      </a>
+    </li>
+  </ul>
+</aside>
+  <!-- navbar -->
+  <nav class="container mx-auto p-4">
+    <button id="sidebar-toggle" class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
+      <div class="hamburger absolute z-20 top-2">
+       <span class="hamburger-top"></span>
+       <span class="hamburger-middle"></span>
+       <span class="hamburger-bottom"></span>
+      </div>
+    </button>
+    <div class="flex items-center justify-between">
+       <div class="pt-2">
+         <h1 class="text-3xl font-bold mx-10">js projex</h1>
+       </div>
+       <div class="max-md:hidden flex gap-x-16 mx-auto">
+         <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
+         <a href="hex.html" class="text-xl  hover:text-yellow-500 transition-all duration-300">hex</a>
+       </div>
+     <button id="menu-btn" class="block hamburger md:hidden">
+       <span class="hamburger-top"></span>
+       <span class="hamburger-middle"></span>
+       <span class="hamburger-bottom"></span>
+     </button>
+    </div>
+   <!-- mobile menu -->
+    <div class="md:hidden">
+      <div id="menu" class="absolute flex-col items-center hidden py-8 mt-12 space-y-6 font-bold bg-white sm:w-full sm:top-2 sm:self-center left-6 drop-shadow-md">
+       <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
+       <a href="hex.html" class="text-xl hover:text-red-600 transition-all duration-300">Hex</a>
+       <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">Projects</a> 
+       <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">About</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <!-- people counter -->
+  <h1 class="my-5 text-5xl">people counter</h1>
+  <h2 id="count-el" class="text-3xl font-bold mb-5">0</h2>
+  <div class="my-5 text-white flex flex-wrap gap-2 max-w-lg mx-auto px-8">
+   <button id="increment-btn" onclick="increment()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">INCREMENT</button>
+   <button id="decrement-btn" onclick="decrement()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">DECREMENT</button>
+   <button id="save-btn" onclick="save()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">SAVE</button>
+  </div>
+  <p class="pb-10">previous entries: <span id="save-el"></span></p>
+<!-- color flipper -->
+  <h1 class="mx-auto my-auto text-5xl bg-cyan-950 w-96 pb-3 rounded-xl text-white">color flipper</h1>
+  <div class="container mx-auto">
+    <h2 class="text-2xl py-3">background color : <span class="color">#f1f5f8</span></h2>
+    <button class="flex mx-auto justify-center text-cyan-800 font-bold w-32 h-8 border-2 border-cyan-800 hover:text-lg hover:w-[7.5rem] hover:rounded-xl hover:bg-cyan-950 hover:border-transparent hover:text-white transition-all ease-in-out duration-300" id="btn">click me</button>
+  </div>
+  <!-- modal -->
+  <section class="container relative mx-auto py-16 h-[15rem] space-y-6">
+    <h1 class="mx-auto text-5xl bg-yellow-500 w-80 pb-2 rounded-xl text-white">Modal</h1>
+    <button class="flex mx-auto justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300"
+    id="modal-btn">open modal</button>
+
+    <!-- <div id="modal-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-[100%] w-[100%]"></div> -->
+    <div id="modal-overlay" class="fixed grid -top-6 left-0 size-full place-items-center bg-black/40 invisible -z-10 transition-all duration-75">
+      <div class="relative h-auto w-[80vh] bg-white rounded-xl grid text-center max-w-[620px] place-items-center">
+        <header class="relative flex justify-center pt-2 text-center text-white bg-yellow-500 text-4xl font-bold h-[10vh] w-full">CONTENT
+          <button class="close-modal absolute right-3 size-8 text-xl text-red-600 transition-all duration-75 hover:scale-125 hover:text-red-500">X</button>
+        </header>
+        <p class="line-clamp-2 font-medium p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. In atque repudiandae, aut quidem officiis quis accusamus ipsum? Reprehenderit, enim? Corrupti voluptatum fugiat saepe ullam nisi necessitatibus beatae consequuntur pariatur repellendus?</p>
+        <button
+        class="flex mx-auto my-3 justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-75"
+        >good job</button>
+      </div>
+    </div>
+   </section>
+  <!-- Questions -->
+  <section class="relative container my-10 mx-auto w-full">
+    <h1 class="text-5xl w-72 mx-auto rounded-xl p-1 bg-slate-500 text-white font-serif mb-4">F . A . Q</h1>
+    <div class="max-w-[620] mb-4">
+      <article id="question" class="rounded-lg bg-white border-black border-2 shadow-md p-3 mb-4">
+        <div id="question-btn" class="flex justify-between items-center cursor-pointer">
+          <h1>> Do you accept all major credit cards??</h1>
+          <button type="button" class="text-xl text-yellow-500">
+            <span class="up-icon">></span>
+            <span class="down-icon ">-</span>
+          </button>
+        </div>
+        <hr class="my-2 border-black question-text" />
+        <p class="question-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo laborum, maxime expedita natus optio corrupti ratione molestiae ab soluta recusandae.</p>
+      </article>
+      <article id="question" class="rounded-lg bg-white border-black border-2 shadow-md p-3 mb-4">
+        <div id="question-btn" class="flex justify-between items-center cursor-pointer">
+          <h1>> do you suppport local farmers?</h1>
+          <button type="button" id="question-btn" class="text-xl text-yellow-500">
+            <span class="up-icon">></span>
+            <span class="down-icon">-</span>
+          </button>
+        </div>
+        <hr class="my-4 border-black question-text" />
+        <p class="question-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo laborum, maxime expedita natus optio corrupti ratione molestiae ab soluta recusandae.</p>
+      </article>
+      <article id="question" class="rounded-lg bg-white border-black border-2 shadow-md p-3 mb-4">
+        <div id="question-btn" class="flex justify-between items-center cursor-pointer">
+          <h1>> do you use organic ingredients?</h1>
+          <button type="button" id="question-btn" class="text-xl text-yellow-500">
+            <div class="up-icon">></div>
+            <span class="down-icon ">-</span>
+          </button>
+        </div>
+        <hr class="my-1 border-black question-text" />
+        <p class="question-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo laborum, maxime expedita natus optio corrupti ratione molestiae ab soluta recusandae.</p>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>
