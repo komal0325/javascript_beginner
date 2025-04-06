@@ -49,18 +49,34 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
     const overlay = document.querySelector("#modal-overlay")
     const modal = document.querySelector("#modal-btn")
-    const close = document.querySelector(".close-modal")
-  
+    const close = document.querySelector("#close-modal")
+    // const cont = document.querySelectorAll("#modal-cont")
+    const good = document.querySelector("#closed")
+    
     function togglemodal() {
       overlay.classList.toggle("open-modal")
     }
   
+    // cont.forEach(function (m){
+    //   // console.log(m)
+    //   const closed = m.querySelector("#close-modal")
+    //   // console.log(closed)
+    //   closed.addEventListener("click", function (){
+    //     togglemodal()
+    //     console.log(m)
+    //   })
+    // })
+    
     modal.addEventListener("click", function (){
       togglemodal()
       console.log("opened modal")
     })
   
     close.addEventListener("click", function (){
+      togglemodal()
+    })
+  
+    good.addEventListener("click", function (){
       togglemodal()
     })
 
