@@ -32,6 +32,7 @@ const reviews = [
   let currentitem = 0
   
   window.addEventListener("DOMContentLoaded", (e) => {
+    // hex color
     hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
     btn = document.getElementById("btn")
     color = document.querySelector(".color")
@@ -44,7 +45,7 @@ const reviews = [
       document.body.style.backgroundColor = hexcolor
       color.textContent = hexcolor
     })
-  
+  // review
     img = document.getElementById('img')
     author = document.getElementById('author')
     job = document.getElementById('job')
@@ -80,7 +81,7 @@ const reviews = [
       currentitem = Math.floor(Math.random() * reviews.length)
       showPerson(currentitem)
     })
-  
+  // mobile menu
     btn = document.getElementById('menu-btn')
     nav = document.getElementById('menu')
   
@@ -89,7 +90,7 @@ const reviews = [
       nav.classList.toggle('flex')
       nav.classList.toggle('hidden')
     })
-  
+  // sidebar menu
     const togglebtn = document.querySelector("#sidebar-toggle")
     const closebtn = document.querySelector("#close-btn")
     const sidebar = document.querySelector(".sidebar")
@@ -112,7 +113,7 @@ const reviews = [
     sidebarBg.addEventListener("click", function () {
       toogleSideBar()
     })
-  
+  // modal
     const overlay = document.querySelector("#modal-overlay")
     const modal = document.querySelector("#modal-btn")
     const close = document.querySelector("#close-modal")
@@ -145,7 +146,7 @@ const reviews = [
     good.addEventListener("click", function (){
       togglemodal()
     })
-  
+  // FAQ
     const ques = document.querySelectorAll("#question")
   
     ques.forEach(function (question){

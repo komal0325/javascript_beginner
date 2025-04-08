@@ -7,7 +7,139 @@
     <link rel="stylesheet" href="/src/output.css">
     <script src="/menu.js"></script>
 </head>
-<body>
-    
+<body class="bg-blue-200 box-border">
+    <!-- sidebar -->
+  <div id="sidebar-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
+  <aside class="sidebar">
+    <div class="flex py-3">
+      <h1 class="text-3xl font-bold mx-10 text-cyan-900">js projex</h1>
+      <button id="close-btn"
+        class="fixed right-4 top-4 size-10 bg-transparent text-red-600 transition-all duration-300 hover:text-red-400 hover:rotate-180">X</button>
+    </div>
+    <ul class="flex flex-col text-start mx-4 text-2xl font-semibold p-6 space-y-4 bg-slate-500">
+      <li class="hover:bg-slate-400">
+        <a href="index.html" class="mx-1">home</a>
+      </li>
+      <li class="hover:bg-slate-400">
+        <a href="hex.html" class="mx-1">Hex</a>
+      </li>
+      <li class="hover:bg-slate-400">
+        <a href="#" class="mx-1">projects</a>
+      </li>
+      <li class="hover:bg-slate-400">
+        <a href="#" class="mx-1">contact</a>
+      </li>
+    </ul>
+    <ul class="flex text-xl space-x-8 mx-2 p-4">
+      <li>
+        <a href="https://www.facebook.com">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtBILdC5ouxGYjeaYJPmVqMsSpsItocXSI5A&s" alt="" height="60px" width="60px">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.twitter.com">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiHIZuDb--IJ-q5d97gWm1W2eyLj7BePcWnQ&s" alt="" height="50px" width="50px">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJ2v3UmTqHtJDSVPTQAd0vbTXTt7EbH84WA&s" alt="" height="50px" width="50px">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com">
+          <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="" height="55px" width="55px">
+        </a>
+      </li>
+    </ul>
+  </aside>
+    <!-- navbar -->
+    <nav class="container mx-auto p-4">
+      <button id="sidebar-toggle" class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
+        <div class="hamburger absolute z-20 top-2">
+         <span class="hamburger-top"></span>
+         <span class="hamburger-middle"></span>
+         <span class="hamburger-bottom"></span>
+        </div>
+      </button>
+      <div class="flex items-center justify-between">
+         <div class="pt-2">
+           <h1 class="text-3xl font-bold mx-10 text-cyan-900">js projex</h1>
+         </div>
+         <div class="max-md:hidden flex gap-x-16 mx-auto">
+           <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
+           <a href="hex.html" class="text-xl  hover:text-yellow-500 transition-all duration-300">hex</a>
+           <a href="menu.html" class="text-xl  hover:text-yellow-500 transition-all duration-300">menu</a>
+         </div>
+       <button id="menu-btn" class="block hamburger md:hidden">
+         <span class="hamburger-top"></span>
+         <span class="hamburger-middle"></span>
+         <span class="hamburger-bottom"></span>
+       </button>
+      </div>
+     <!-- mobile menu -->
+     <div class="md:hidden mx-auto ">
+      <div id="menu"
+        class="absolute flex-col items-center mx-auto hidden py-8 mt-10 space-y-6 font-bold bg-white max-md:w-[450px] max-sm:w-[340px] max-md:top-7 max-md:self-center drop-shadow-md">
+        <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
+        <a href="hex.html" class="text-xl hover:text-red-600 transition-all duration-300">Hex</a>
+        <a href="menu.html" class="text-xl hover:text-red-600 transition-all duration-300">menu</a>
+        <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">About</a>
+      </div>
+     </div>
+    </nav>
+  <!-- menu -->
+   <section id="menu" class="py-5">
+    <div class="pb-10">
+      <h1 class="mx-auto mt-10 text-5xl font-medium border-2 border-[#d8ab68] text-[#d8ab68] w-[15rem] pb-1 rounded-xl">MENU</h1>
+    </div>
+
+    <!-- menu items -->
+     <div id="section-center" class="grid justify-items-center w-[90vw] mx-auto max-w-[1170px] gap-x-[2rem] gap-y-[2rem]">
+      <!-- item-1 -->
+      <article id="menu-item" class="grid gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-4 rounded-2xl">
+        <img src="/src/img/menu-item.jpeg"  alt="menu item" id="photo" class="object-cover h-[200px] border-[0.25rem] border-[#d8ab68] rounded-3xl">
+        <div id="item-info">
+          <header class="flex justify-between border-b border-dotted border-[#d8ab68]">
+            <h4 class="mb-2">buttermilk pancakes</h4>
+            <h4 id="price" class="mb-2">$15</h4>
+          </header>
+          <p id="item-text" class="pt-4" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+            laboriosam excepturi! Quo, officia.
+          </p>
+        </div>
+      </article>
+      <!-- item-2 -->
+      <article id="menu-item" class="grid gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-4 rounded-2xl">        <img src="/src/img/menu-item.jpeg"  alt="menu item" id="photo" class="object-cover h-[200px] border-[0.25rem] border-[#d8ab68] rounded-3xl">
+        <div id="item-info">
+          <header class="flex justify-between border-b border-dotted border-[#d8ab68]">
+            <h4 class="mb-2">buttermilk pancakes</h4>
+            <h4 id="price" class="mb-2">$15</h4>
+          </header>
+          <p id="item-text" class="pt-4" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+            laboriosam excepturi! Quo, officia.
+          </p>
+        </div>
+      </article>
+      <!-- item-3 -->
+      <article id="menu-item" class="grid gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-4 rounded-2xl">        <img src="/src/img/menu-item.jpeg"  alt="menu item" id="photo" class="object-cover h-[200px] border-[0.25rem] border-[#d8ab68] rounded-3xl">
+        <div id="item-info">
+          <header class="flex justify-between border-b border-dotted border-[#d8ab68]">
+            <h4 class="mb-2">buttermilk pancakes</h4>
+            <h4 id="price" class="mb-2">$15</h4>
+          </header>
+          <p id="item-text" class="pt-4" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+            laboriosam excepturi! Quo, officia.
+          </p>
+        </div>
+      </article>
+     </div>
+   </section>
 </body>
 </html>
