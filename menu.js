@@ -1,7 +1,7 @@
 const menu = [
   {
     id: 1,
-    title: "buttermilk pancakes",
+    title: "Buttermilk Pancakes",
     category: "breakfast",
     price: 15.99,
     img: "./src/img/item-1.jpeg",
@@ -9,7 +9,7 @@ const menu = [
   },
   {
     id: 2,
-    title: "diner double",
+    title: "Diner Double",
     category: "lunch",
     price: 13.99,
     img: "./src/img/item-2.jpeg",
@@ -17,7 +17,7 @@ const menu = [
   },
   {
     id: 3,
-    title: "godzilla milkshake",
+    title: "Godzilla Milkshake",
     category: "shakes",
     price: 6.99,
     img: "./src/img/item-3.jpeg",
@@ -25,7 +25,7 @@ const menu = [
   },
   {
     id: 4,
-    title: "country delight",
+    title: "Country Delight",
     category: "breakfast",
     price: 20.99,
     img: "./src/img/item-4.jpeg",
@@ -33,7 +33,7 @@ const menu = [
   },
   {
     id: 5,
-    title: "egg attack",
+    title: "Egg Attack",
     category: "lunch",
     price: 22.99,
     img: "./src/img/item-5.jpeg",
@@ -41,7 +41,7 @@ const menu = [
   },
   {
     id: 6,
-    title: "oreo dream",
+    title: "Oreo Dream",
     category: "shakes",
     price: 18.99,
     img: "./src/img/item-6.jpeg",
@@ -49,7 +49,7 @@ const menu = [
   },
   {
     id: 7,
-    title: "bacon overflow",
+    title: "Bacon Overflow",
     category: "breakfast",
     price: 8.99,
     img: "./src/img/item-7.jpeg",
@@ -57,7 +57,7 @@ const menu = [
   },
   {
     id: 8,
-    title: "american classic",
+    title: "American Classic",
     category: "lunch",
     price: 12.99,
     img: "./src/img/item-8.jpeg",
@@ -65,7 +65,7 @@ const menu = [
   },
   {
     id: 9,
-    title: "quarantine buddy",
+    title: "Quarantine Buddy",
     category: "shakes",
     price: 16.99,
     img: "./src/img/item-9.jpeg",
@@ -73,7 +73,7 @@ const menu = [
   },
   {
     id: 10,
-    title: "bison steak",
+    title: "Bison Steak",
     category: "dinner",
     price: 22.99,
     img: "./src/img/item-10.jpeg",
@@ -125,11 +125,12 @@ window.addEventListener("DOMContentLoaded", (e) => {
               <div id="item-info">
                <header class="flex justify-between border-b border-dotted border-[#d8ab68]">
                   <h4 class="mb-2">${item.title}</h4>
-                  <h4 id="price" class="mb-2">$${item.price}</h4>
+                  <h4 id="price" class="mb-2 text-[#ebac4d]">$${item.price}</h4>
                 </header>
-                <p id="item-text" class="pt-4" >
+                <p id="item-text" class="py-2 font-medium" >
                  ${item.desc}
                 </p>
+                <button class="flex mx-auto my-auto justify-center text-yellow-500 font-bold w-24 h-7 border-2 rounded-xl border-yellow-500 hover:cursor-pointer hover:text-lg hover:w-[7rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300">Order</button>
              </div>
            </article>`
     })
