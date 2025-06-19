@@ -117,8 +117,11 @@ window.addEventListener("DOMContentLoaded", (e) => {
     })
     
     const section = document.querySelector("#section-center")
+
+    displaymenuitems(menu)
     
-    let displaymenu = menu.map(function (item){
+      function displaymenuitems(menuitems) {
+      let displaymenu = menuitems.map(function (item){
       
       return `<article id="menu-item" class="grid gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-3 rounded-2xl">
               <img src="${item.img}"  alt="${item.title}" id="photo" class="object-cover h-[240px] border-[0.25rem] border-[#d8ab68] rounded-3xl">
@@ -130,11 +133,56 @@ window.addEventListener("DOMContentLoaded", (e) => {
                 <p id="item-text" class="py-2 font-medium" >
                  ${item.desc}
                 </p>
-                <button class="flex mx-auto my-auto justify-center text-yellow-500 font-bold w-24 h-7 border-2 rounded-xl border-yellow-500 hover:cursor-pointer hover:text-lg hover:w-[7rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300">Order</button>
+                <button class="flex mx-auto my-auto justify-center text-yellow-500 font-bold w-24 h-8 border-2 rounded-xl border-yellow-500 hover:cursor-pointer hover:text-lg hover:w-[7rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300">Order</button>
              </div>
            </article>`
     })
     displaymenu = displaymenu.join("")
     section.innerHTML = displaymenu
+    }
+    
+    displaymenubtns()
 
-})
+    function displaymenubtns() {
+        const categories = menu.reduce( function (values, item) {
+    if(!values.includes(item.category)) {
+      values.push(item.category)
+    }
+    return values
+  },['all'])
+
+  const container = document.querySelector("#btncontainer")
+
+  const categorybtns = categories.map(function (category) {
+    return `<button id="filter-btn" 
+    data-id=${category} 
+    class="font-semibold px-3 py-1 cursor-pointer capitalize border-2 rounded-xl border-[#d8ab68] transition-all duration-300 hover:bg-[#d8ab68] hover:text-white">
+    ${category}
+    </button>`
+  })
+  .join("")
+  container.innerHTML = categorybtns
+
+
+  const filterbtns = document.querySelectorAll("#filter-btn") 
+
+  filterbtns.forEach( function (btn) {
+    btn.addEventListener('click', function (e) {
+      const category = e.currentTarget.dataset.id
+      const menuCategory = menu.filter(function (menuItem) {
+        // console.log(menuItem.category)
+        if(menuItem.category === category) {
+          return menuItem
+        }
+      })
+      if(category === "all") {
+        displaymenuitems(menu)
+     }
+     else{
+      displaymenuitems(menuCategory)
+    }
+    })
+  })
+  }
+
+  })
