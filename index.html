@@ -8,7 +8,56 @@
     <script src="./new.js"></script>
 </head>
 <body class="bg-blue-200 box-border">
-  <!-- sidebar -->
+  <!-- preloader -->
+<div id="preloader" class="fixed grid justify-center items-center visible z-[999] top-0 left-0 right-0 bottom-0 transition-all duration-100">
+  <img src="/src/img/preloader.gif" alt="preloader" />
+</div>
+<header class="relative grid min-h-[100vh] place-items-center">
+    <!-- navbar -->
+  <nav class="container absolute top-5 mx-auto">
+    <button id="sidebar-toggle" class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
+      <div class="hamburger absolute z-20 top-2">
+       <span class="hamburger-top"></span>
+       <span class="hamburger-middle"></span>
+       <span class="hamburger-bottom"></span>
+      </div>
+    </button>
+    <div class="flex items-center justify-between">
+       <div class="">
+         <h1 class="text-3xl font-bold mx-10 text-blue-400">js projex</h1>
+       </div>
+       <div class="max-md:hidden flex gap-x-16 mx-auto">
+         <a href="index.html" class="text-xl text-green-500 hover:text-red-600 transition-all duration-300">Home</a>
+         <a href="hex.html" class="text-xl text-yellow-500 hover:text-green-500 transition-all duration-300">hex</a>
+         <a href="menu.html" class="text-xl text-red-500 hover:text-yellow-500 transition-all duration-300">menu</a>
+       </div>
+     <button id="menu-btn" class="block hamburger md:hidden">
+       <span class="hamburger-top"></span>
+       <span class="hamburger-middle"></span>
+       <span class="hamburger-bottom"></span>
+     </button>
+    </div>
+   <!-- mobile menu -->
+   <div class="md:hidden mx-auto">
+    <div id="menu"
+      class="absolute flex-col items-center mx-auto hidden py-8 mt-10 space-y-6 font-bold bg-white max-md:w-[450px] max-sm:w-[340px] max-md:top-7 max-md:self-center drop-shadow-md">
+      <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
+      <a href="hex.html" class="text-xl hover:text-red-600 transition-all duration-300">Hex</a>
+      <a href="menu.html" class="text-xl hover:text-red-600 transition-all duration-300">menu</a>
+      <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">About</a>
+    </div>
+  </div>
+  </nav>
+  <!-- video -->
+  <video id="video-cont" controls muted autoplay loop src="/src/img/video.mp4" class="absolute top-0 left-0 w-full h-full object-cover -z-[2]"></video>
+  <h1 class="text-white text-5xl font-sans">Video Project</h1>
+<!-- switch button -->
+  <button id="switch-btn" class="absolute flex border rounded-2xl items-center justify-around bottom-[5%] left-[5%] w-[7rem] h-[2rem] bg-white transition-all duration-300">
+    <span class="inline-block font-semibold cursor-pointer capitalize z-10">play</span>
+    <span class="inline-block font-semibold cursor-pointer capitalize z-10 ">pause</span>
+    <span id="switch" class="block absolute w-1/2 h-full top-0 left-0 border rounded-2xl bg-blue-300 transition-all duration-300"></span>
+  </button>
+<!-- sidebar -->
 <div id="sidebar-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
 <aside class="sidebar">
   <div class="flex py-3">
@@ -53,41 +102,7 @@
     </li>
   </ul>
 </aside>
-  <!-- navbar -->
-  <nav class="container mx-auto p-4">
-    <button id="sidebar-toggle" class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
-      <div class="hamburger absolute z-20 top-2">
-       <span class="hamburger-top"></span>
-       <span class="hamburger-middle"></span>
-       <span class="hamburger-bottom"></span>
-      </div>
-    </button>
-    <div class="flex items-center justify-between">
-       <div class="pt-2">
-         <h1 class="text-3xl font-bold mx-10 text-cyan-900">js projex</h1>
-       </div>
-       <div class="max-md:hidden flex gap-x-16 mx-auto">
-         <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
-         <a href="hex.html" class="text-xl  hover:text-yellow-500 transition-all duration-300">hex</a>
-         <a href="menu.html" class="text-xl  hover:text-yellow-500 transition-all duration-300">menu</a>
-       </div>
-     <button id="menu-btn" class="block hamburger md:hidden">
-       <span class="hamburger-top"></span>
-       <span class="hamburger-middle"></span>
-       <span class="hamburger-bottom"></span>
-     </button>
-    </div>
-   <!-- mobile menu -->
-   <div class="md:hidden mx-auto ">
-    <div id="menu"
-      class="absolute flex-col items-center mx-auto hidden py-8 mt-10 space-y-6 font-bold bg-white max-md:w-[450px] max-sm:w-[340px] max-md:top-7 max-md:self-center drop-shadow-md">
-      <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
-      <a href="hex.html" class="text-xl hover:text-red-600 transition-all duration-300">Hex</a>
-      <a href="menu.html" class="text-xl hover:text-red-600 transition-all duration-300">menu</a>
-      <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">About</a>
-    </div>
-  </div>
-  </nav>
+</header>
   <br>
   <!-- people counter -->
   <h1 class="my-5 text-5xl">people counter</h1>
