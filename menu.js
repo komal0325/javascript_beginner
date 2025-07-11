@@ -117,19 +117,17 @@ window.addEventListener("DOMContentLoaded", (e) => {
     })
     
     const section = document.querySelector("#section-center")
-
-    displaymenuitems(menu)
     
       function displaymenuitems(menuitems) {
       let displaymenu = menuitems.map(function (item){
       
-      return `<article id="menu-item" class="grid gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-3 rounded-2xl">
+      return `<article id="menu-item" class="grid bg-amber-50 gap-x-[1rem] gap-y-[2rem] max-w-96 border-2 border-[#d8ab68] p-3 rounded-2xl">
               <img src="${item.img}"  alt="${item.title}" id="photo" class="object-cover h-[240px] border-[0.25rem] border-[#d8ab68] rounded-3xl">
               <div id="item-info">
-               <header class="flex justify-between border-b border-dotted border-[#d8ab68]">
+               <div class="flex justify-between border-b  border-dotted border-[#d8ab68]">
                   <h4 class="mb-2">${item.title}</h4>
                   <h4 id="price" class="mb-2 text-[#ebac4d]">$${item.price}</h4>
-                </header>
+                </div>
                 <p id="item-text" class="py-2 font-medium" >
                  ${item.desc}
                 </p>
@@ -140,8 +138,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
     displaymenu = displaymenu.join("")
     section.innerHTML = displaymenu
     }
-    
-    displaymenubtns()
 
     function displaymenubtns() {
         const categories = menu.reduce( function (values, item) {
@@ -156,7 +152,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   const categorybtns = categories.map(function (category) {
     return `<button id="filter-btn" 
     data-id=${category} 
-    class="font-semibold px-3 py-1 cursor-pointer capitalize border-2 rounded-xl border-[#d8ab68] transition-all duration-300 hover:bg-[#d8ab68] hover:text-white">
+    class="font-semibold bg-amber-50 px-3 py-1 cursor-pointer capitalize border-2 rounded-xl border-[#d8ab68] transition-all duration-300 hover:bg-[#d8ab68] hover:text-white">
     ${category}
     </button>`
   })
@@ -184,5 +180,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
     })
   })
   }
+
+  displaymenuitems(menu)
+  displaymenubtns()
 
   })
