@@ -30,6 +30,7 @@
          <a href="index.html" class="text-xl text-green-500 hover:text-red-600 transition-all duration-300">Home</a>
          <a href="hex.html" class="text-xl text-yellow-500 hover:text-green-500 transition-all duration-300">hex</a>
          <a href="menu.html" class="text-xl text-red-500 hover:text-yellow-500 transition-all duration-300">menu</a>
+         <a href="scroll.html" class="text-xl text-blue-600 hover:text-yellow-500 transition-all duration-300">scroll</a>
        </div>
      <button id="menu-btn" class="block hamburger md:hidden">
        <span class="hamburger-top"></span>
@@ -44,15 +45,15 @@
       <a href="index.html" class="text-xl hover:text-red-600 transition-all duration-300">Home</a>
       <a href="hex.html" class="text-xl hover:text-red-600 transition-all duration-300">Hex</a>
       <a href="menu.html" class="text-xl hover:text-red-600 transition-all duration-300">menu</a>
-      <a href="#" class="text-xl hover:text-red-600 transition-all duration-300">About</a>
+      <a href="scroll.html" class="text-xl hover:text-red-600 transition-all duration-300">scroll</a>
     </div>
   </div>
   </nav>
   <!-- video -->
-  <video id="video-cont" controls muted autoplay loop src="/src/img/video.mp4" class="absolute top-0 left-0 w-full h-full object-cover -z-[2]"></video>
+  <video id="video-cont" muted autoplay loop src="/src/img/video.mp4" class="absolute top-0 left-0 w-full h-full object-cover -z-[2]"></video>
   <h1 class="text-white text-5xl font-sans">Video Project</h1>
 <!-- switch button -->
-  <button id="switch-btn" class="absolute flex border rounded-2xl items-center justify-around bottom-[5%] left-[5%] w-[7rem] h-[2rem] bg-white transition-all duration-300">
+  <button id="switch-btn" class="absolute flex  border rounded-2xl items-center justify-around bottom-[5%] left-[5%] w-[7rem] h-[2rem] bg-white opacity-40 transition-all duration-300 hover:opacity-100">
     <span class="inline-block font-semibold cursor-pointer capitalize z-10">play</span>
     <span class="inline-block font-semibold cursor-pointer capitalize z-10 ">pause</span>
     <span id="switch" class="block absolute w-1/2 h-full top-0 left-0 border rounded-2xl bg-blue-300 transition-all duration-300"></span>
@@ -126,7 +127,7 @@
     id="modal-btn">open modal</button>
 
     <!-- <div id="modal-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-[100%] w-[100%]"></div> -->
-    <div id="modal-overlay" class="fixed grid -top-6 left-0 size-full place-items-center bg-black/40 invisible -z-10 transition-all duration-75">
+    <div id="modal-overlay" class="fixed grid -top-0 left-0 size-full place-items-center bg-black/40 invisible -z-10 transition-all duration-75">
         <div class="p-3 mx-auto">
             <div id="modal-cont" class="relative h-auto w-[80vh] max-md:w-[350px] bg-white rounded-xl grid text-center max-w-[620px] place-items-center">
                 <header class="relative flex justify-center pt-2 text-center rounded-xl text-white bg-yellow-500 text-4xl font-bold h-[10vh] w-full">CONTENT</header>
@@ -138,6 +139,27 @@
         </div>
     </div>
    </section>
+   <!-- 3d cube rotation -->
+  <section  class="container flex relative mx-auto py-16 h-[15rem] items-center justify-center gap-x-4">
+    <div class="cube">
+        <div class="cube-content">
+            <img class="w-[100px] h-[100px] object-cover rounded-md mb-2.5" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Sample Image">
+            <p class="m-0 font-medium text-[#333] text-center overflow-hidden text-ellipsis max-h-14">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+    </div>
+    <div class="cube">
+        <div class="cube-content">
+            <img class="w-[100px] h-[100px] object-cover rounded-md mb-2.5" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Sample Image">
+            <p class="m-0 font-medium text-[#333] text-center overflow-hidden text-ellipsis max-h-14">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+    </div>
+    <div class="cube">
+        <div class="cube-content">
+            <img class="w-[100px] h-[100px] object-cover rounded-md mb-2.5" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Sample Image">
+            <p class="m-0 font-medium text-[#333] text-center overflow-hidden text-ellipsis max-h-14">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+    </div>
+  </section>
   <!-- Questions -->
   <section class="relative container my-6 mx-auto p-3">
     <h1 class="text-5xl w-72 mx-auto rounded-xl p-1 bg-slate-500 text-white font-serif mb-4">F . A . Q</h1>

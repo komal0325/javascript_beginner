@@ -80,6 +80,32 @@ window.addEventListener("DOMContentLoaded", (e) => {
       togglemodal()
     })
 
+
+  const cubes = document.querySelectorAll('.cube');
+
+  cubes.forEach(cube => {
+     cube.addEventListener('mousemove', (e) => {
+        const rect = cube.getBoundingClientRect();
+        const cubeCenterX = rect.left + rect.width / 2;
+        const cubeCenterY = rect.top + rect.height / 2;
+
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        const deltaX = (mouseX - cubeCenterX) / 10;
+        const deltaY = (mouseY - cubeCenterY) / 10;
+
+        const rotateX = -deltaY;
+        const rotateY = deltaX;
+
+          cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    cube.addEventListener('mouseleave', () => {
+        cube.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    });
+  });
+
   const ques = document.querySelectorAll("#question")
 
   ques.forEach(function (question){

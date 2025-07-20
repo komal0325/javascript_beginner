@@ -2,7 +2,9 @@
 
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+    "dev2": "npx tailwindcss -i ./src/scroll.css -o ./src/output2.css --watch",
+    "build2": "npx tailwindcss -i ./src/scroll.css -o ./src/output2.css"
   },
 
   "dependencies": {

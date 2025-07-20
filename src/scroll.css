@@ -8,7 +8,7 @@
   --clr-primary-3: hsl(205, 72%, 37%);
   --clr-primary-4: hsl(205, 63%, 48%);
   /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-5: #49a6e9;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
@@ -32,7 +32,10 @@
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
+  --clr-secondary: hsla(182, 63%, 54%);
   --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -48,8 +51,12 @@ body {
   text-align: center;
 }
 
-.color {
-  color: var(--clr-primary-5);
+.home {
+  min-height: 100vh;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+  url(/src/img/hero-bcg.jpeg) center/cover no-repeat;
+  margin-bottom: 1rem;
+  z-index: -100;
 }
 
 .hamburger {
@@ -67,8 +74,8 @@ body {
   top: 0;
   left: 0;
   width: 24px;
-  height: 2px;
-  background: rgb(236, 67, 5);
+  height: 3px;
+  background: black;
   transform: rotate(0);
   transition: all 0.5s;
 }
@@ -98,143 +105,52 @@ body {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
-.sidebar {
+.fixed-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   background: white;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  row-gap: 1rem;
-  box-shadow: hsl(360, 67%, 44%);
-  transition: all 0.3s linear;
-  transform: translate(-100%);
-  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.fixed-nav .links a {
+  color: gray;
+}
+.fixed-nav .links a:hover {
+  color: var(--clr-secondary);
 }
 
-.show-sidebar {
-  transform: translate(0);
-}
 
-@keyframes bounce {
-  0% {
-    transform: scale(1);
+@media screen and (min-width: 800px){
+
+  nav {
+    background: transparent;
   }
 
-  50% {
-    transform: scale(1.3);
+  .nav-center{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  100% {
-    transform: scale(1);
-  }
-}
-
-@media screen and (min-width: 676px) {
-  .sidebar {
-    width: 400px;
-  }
-}
-
-.open-modal {
-  visibility: visible;
-  z-index: 10;
-}
-
-.question-text {
-  display: none;
-}
-
-.show-text .question-text {
-  display: block;
-}
-
-.down-icon {
-  display: none;
-}
-
-.show-text .down-icon {
-  display: inline;
-}
-
-.show-text .up-icon {
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  #menu-item {
-    grid-template-columns: 225px 1fr;
-    gap: 0 1.25rem;
-    max-width: 40rem;
+  .links a {
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    display: block;
+    transition: all 0.3s linear;
+    margin: 0 1rem;
+    font-weight: bold;
+    padding: 0;
   }
 
-  #photo {
-    height: 175px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #section-center {
-    width: 95vw;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  #photo {
-    height: 150px;
-  }
-}
-
-.hide-preloader {
-  z-index: -999;
-  visibility: hidden;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: -1;
-}
-
-.slide #switch {
-  left: 50%;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: black;
+  .links a:hover {
     color: white;
   }
-} */
 
-.cube {
-  width: 250px;
-  height: 250px;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg) rotateY(0deg);
-  transition: transform 0.1s ease;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  position: relative;
-  overflow: hidden;
-}
-
-.cube-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateZ(1px); /* Slight offset for 3D effect */
 }
