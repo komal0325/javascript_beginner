@@ -8,13 +8,13 @@
     <script src="/scroll.js"></script>
 </head>
 <body >
-    <div class="home">
+    <div id="home">
         <!-- navbar -->
         <nav class="bg-white p-1.5">
             <div class="nav-center">
-                <div class="flex items-center justify-between text-4xl mx-2">
+                <div class="flex items-center justify-between text-4xl mx-2 md:p-0">
                     JS Projex
-                    <button id="nav-toggle" class="size-6 bg-transparent border border-transparent transition-all cursor-pointer">
+                    <button id="nav-toggle" class="size-6 bg-transparent border border-transparent transition-all cursor-pointer md:hidden ">
                         <div class="hamburger absolute z-20 top-2">
                             <span class="hamburger-top"></span>
                             <span class="hamburger-middle"></span>
@@ -23,9 +23,20 @@
                    </button>
                 </div>
                 <!-- links -->
-                 <div class="h-0 overflow-hidden transition-all duration-300 ">
-                    <ul class="">
-
+                 <div class="links-cont h-0 overflow-hidden transition-all duration-300 md:h-auto">
+                    <ul class="links md:flex">
+                        <li>
+                            <a href="index.html" class="scroll-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="hex.html" class="scroll-link">Hex</a>
+                        </li>
+                        <li>
+                            <a href="menu.html" class="scroll-link">Menu</a>
+                        </li>
+                        <li>
+                            <a href="scroll.html" class="scroll-link">Scroll</a>
+                        </li>
                     </ul>
                  </div>
             </div>

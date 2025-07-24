@@ -43,7 +43,6 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
-    --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -433,9 +432,6 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
-  .m-auto {
-    margin: auto;
-  }
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
   }
@@ -580,14 +576,6 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
-  .size-2 {
-    width: calc(var(--spacing) * 2);
-    height: calc(var(--spacing) * 2);
-  }
-  .size-2\.5 {
-    width: calc(var(--spacing) * 2.5);
-    height: calc(var(--spacing) * 2.5);
-  }
   .size-6 {
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
@@ -628,12 +616,6 @@
   .h-\[40rem\] {
     height: 40rem;
   }
-  .h-\[50px\] {
-    height: 50px;
-  }
-  .h-\[80px\] {
-    height: 80px;
-  }
   .h-\[100\%\] {
     height: 100%;
   }
@@ -667,9 +649,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -696,12 +675,6 @@
   }
   .w-\[22rem\] {
     width: 22rem;
-  }
-  .w-\[50px\] {
-    width: 50px;
-  }
-  .w-\[80px\] {
-    width: 80px;
   }
   .w-\[80vh\] {
     width: 80vh;
@@ -1150,12 +1123,6 @@
       --tw-space-y-reverse: 1;
     }
   }
-  .gap-x-2 {
-    column-gap: calc(var(--spacing) * 2);
-  }
-  .gap-x-3 {
-    column-gap: calc(var(--spacing) * 3);
-  }
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
   }
@@ -1449,9 +1416,6 @@
   }
   .bg-amber-50 {
     background-color: var(--color-amber-50);
-  }
-  .bg-black {
-    background-color: var(--color-black);
   }
   .bg-black\/40 {
     background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
@@ -1821,10 +1785,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .font-light {
-    --tw-font-weight: var(--font-weight-light);
-    font-weight: var(--font-weight-light);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -2631,9 +2591,24 @@
       width: 340px;
     }
   }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:h-auto {
+    @media (width >= 48rem) {
+      height: auto;
+    }
+  }
+  .md\:p-0 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 0);
     }
   }
   .lg\:w-\[900px\] {
@@ -2741,7 +2716,24 @@ body {
 .fixed-nav .links a:hover {
   color: var(--clr-secondary);
 }
-@media screen and (min-width: 800px) {
+.show-links {
+  height: 200px;
+}
+.links a {
+  background: var(--clr-white);
+  color: grey;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  transition: var(--transition);
+  font-weight: bold;
+  padding: 1rem 0;
+}
+.links a:hover {
+  color: var(--clr-grey-1);
+}
+@media screen and (min-width: 768px) {
   nav {
     background: transparent;
   }
@@ -2763,10 +2755,10 @@ body {
     transition: all 0.3s linear;
     margin: 0 1rem;
     font-weight: bold;
-    padding: 0;
+    padding: 0.5rem;
   }
   .links a:hover {
-    color: white;
+    color: var(--clr-grey-5);
   }
 }
 @property --tw-translate-x {
