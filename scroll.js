@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const toplink = document.querySelector(".top-link")
 
     window.addEventListener("scroll", function (){
+        
         const scrollheight = window.pageYOffset
         const navheight = navbar.getBoundingClientRect().height
         if (scrollheight > navheight) {
@@ -42,11 +43,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const scrolllinks = document.querySelectorAll(".scroll-link")
     scrolllinks.forEach((link) => {
-        link.addEventListener("click", function (){
+        link.addEventListener("click", function (e){
             e.preventDefault()
 
             const id = e.currentTarget.getAttribute("href").slice(1)
-            const element = document.getElementById("id")
+            const element = document.getElementById(id)
             const navheight = navbar.getBoundingClientRect().height
             const containerheight = linkscontainer.getBoundingClientRect().height
             const fixednav = navbar.classList.contains("fixed-nav")
@@ -64,7 +65,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 left: 0,
                 top: position,
             })
-            linkscontainer.style.height = 0
+            // linkscontainer.style.height = 0
         })
     })
 })

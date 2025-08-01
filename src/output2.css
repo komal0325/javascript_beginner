@@ -629,6 +629,9 @@
   .h-\[100px\] {
     height: 100px;
   }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
   .h-\[240px\] {
     height: 240px;
   }
@@ -655,6 +658,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1426,6 +1432,9 @@
   }
   .bg-amber-50 {
     background-color: var(--color-amber-50);
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-black\/40 {
     background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
