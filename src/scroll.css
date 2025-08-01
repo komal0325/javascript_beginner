@@ -136,7 +136,7 @@ body {
 }
 
 .show-links {
-  height: 200px;
+  height: 230px;
 }
 .links a {
   background: var(--clr-white);
@@ -153,9 +153,6 @@ body {
   color: var(--clr-grey-1);
 }
 
-.show-links {
-  height: 200px;
-}
 
 .btn {
   text-transform: uppercase;
@@ -224,11 +221,11 @@ body {
 .top-link {
   font-size: 1.25rem;
   position: fixed;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 2rem;
+  right: 2rem;
   background: var(--clr-secondary);
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   display: grid;
   place-items: center;
   border-radius: var(--radius);

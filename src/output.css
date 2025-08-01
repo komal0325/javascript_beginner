@@ -28,7 +28,6 @@
     --color-slate-400: oklch(0.704 0.04 256.788);
     --color-slate-500: oklch(0.554 0.046 257.417);
     --color-gray-100: oklch(0.967 0.003 264.542);
-    --color-gray-400: oklch(0.707 0.022 261.325);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -1168,9 +1167,6 @@
       --tw-space-x-reverse: 1;
     }
   }
-  .gap-y-2 {
-    row-gap: calc(var(--spacing) * 2);
-  }
   .gap-y-\[2rem\] {
     row-gap: 2rem;
   }
@@ -1454,9 +1450,6 @@
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
-  }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -1928,9 +1921,6 @@
   }
   .text-cyan-900 {
     color: var(--color-cyan-900);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
   }
   .text-green-500 {
     color: var(--color-green-500);

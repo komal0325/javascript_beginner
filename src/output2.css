@@ -28,7 +28,6 @@
     --color-slate-400: oklch(0.704 0.04 256.788);
     --color-slate-500: oklch(0.554 0.046 257.417);
     --color-gray-100: oklch(0.967 0.003 264.542);
-    --color-gray-400: oklch(0.707 0.022 261.325);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -657,9 +656,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -1168,9 +1164,6 @@
       --tw-space-x-reverse: 1;
     }
   }
-  .gap-y-2 {
-    row-gap: calc(var(--spacing) * 2);
-  }
   .gap-y-\[2rem\] {
     row-gap: 2rem;
   }
@@ -1434,9 +1427,6 @@
   .bg-amber-50 {
     background-color: var(--color-amber-50);
   }
-  .bg-black {
-    background-color: var(--color-black);
-  }
   .bg-black\/40 {
     background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
   }
@@ -1454,9 +1444,6 @@
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
-  }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -1928,9 +1915,6 @@
   }
   .text-cyan-900 {
     color: var(--color-cyan-900);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
   }
   .text-green-500 {
     color: var(--color-green-500);
@@ -2770,7 +2754,7 @@ body {
   color: var(--clr-secondary);
 }
 .show-links {
-  height: 200px;
+  height: 230px;
 }
 .links a {
   background: var(--clr-white);
@@ -2785,9 +2769,6 @@ body {
 }
 .links a:hover {
   color: var(--clr-grey-1);
-}
-.show-links {
-  height: 200px;
 }
 .btn {
   text-transform: uppercase;
@@ -2848,11 +2829,11 @@ body {
 .top-link {
   font-size: 1.25rem;
   position: fixed;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 2rem;
+  right: 2rem;
   background: var(--clr-secondary);
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   display: grid;
   place-items: center;
   border-radius: var(--radius);
