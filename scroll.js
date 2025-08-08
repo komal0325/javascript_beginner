@@ -47,7 +47,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         const scrollheight = window.pageYOffset
         const navheight = navbar.getBoundingClientRect().height
-        if (scrollheight > navheight) {
+        // console.log(navheight)
+        if (scrollheight > 0) {
             navbar.classList.add("fixed-nav")
         } else {
             navbar.classList.remove("fixed-nav")
@@ -88,4 +89,22 @@ window.addEventListener('DOMContentLoaded', (e) => {
             // linkscontainer.style.height = 0
         })
     })
+
+    const tabHeaders = document.querySelectorAll('.tab-header');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            // Remove active class from all headers and contents
+            tabHeaders.forEach(h => h.classList.remove('active'));
+            tabContents.forEach(c => c.classList.add('hidden'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Add active class to clicked header and corresponding content
+            header.classList.add('active');
+            const tabId = header.getAttribute('data-tab');
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(tabId).classList.add('active');
+            });
+    });
 })

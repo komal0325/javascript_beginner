@@ -127,6 +127,7 @@ body {
   width: 100%;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 .fixed-nav .links a {
   color: gray;
@@ -248,5 +249,23 @@ body {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+
+.active {
+  background-color: darkgray;
+ color: black;
+ font-weight: bold;
+}
+
+.tab-content {
+ height: 300px; 
+ overflow-y: auto; 
+}
+
+@media (max-width: 640px) {
+  .tab-content {
+  height: 200px;
   }
 }
