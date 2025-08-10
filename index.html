@@ -126,9 +126,9 @@
     <button class="flex mx-auto justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:cursor-pointer hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300"
     id="modal-btn">open modal</button>
 
-    <!-- <div id="modal-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-[100%] w-[100%]"></div> -->
-    <div id="modal-overlay" class="fixed grid -top-0 left-0 size-full place-items-center bg-black/40 invisible -z-10 transition-all duration-75">
-        <div class="p-3 mx-auto">
+    <!-- <div id="modal-overlay" class="z-[10] fixed grid bg-black/40 pointer-events-none place-items-center opacity-0 transition-all duration-200 size-full"> -->
+    <div id="modal-overlay" class="fixed grid -top-0 left-0 size-full pointer-events-none place-items-center bg-black/50 invisible -z-10 transition-all duration-75">
+        <aside class="p-3 mx-auto pointer-events-auto">
             <div id="modal-cont" class="relative h-auto w-[80vh] max-md:w-[350px] bg-white rounded-xl grid text-center max-w-[620px] place-items-center">
                 <header class="relative flex justify-center pt-2 text-center rounded-xl text-white bg-yellow-500 text-4xl font-bold h-[10vh] w-full">CONTENT</header>
                 <button id="close-modal" class="absolute right-3 top-2 size-8 text-xl text-red-600 transition-all duration-0 hover:scale-125 hover:text-red-500">X</button>
@@ -136,7 +136,7 @@
                 <button id="closed" class="flex mx-auto my-3 justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:cursor-pointer hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-0"
                 >good job</button>
             </div>
-        </div>
+        </aside>
     </div>
    </section>
    <!-- 3d cube rotation -->

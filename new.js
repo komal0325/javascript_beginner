@@ -76,6 +76,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
       togglemodal()
     })
   
+    // overlay.addEventListener("click", function (){
+    //   togglemodal()
+    // })
+  
     good.addEventListener("click", function (){
       togglemodal()
     })
@@ -92,8 +96,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
-        const deltaX = (mouseX - cubeCenterX) / 10;
-        const deltaY = (mouseY - cubeCenterY) / 10;
+        const deltaX = (mouseX - cubeCenterX) / 8;
+        const deltaY = (mouseY - cubeCenterY) / 8;
 
         const rotateX = -deltaY;
         const rotateY = deltaX;

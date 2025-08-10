@@ -218,12 +218,12 @@ header::after {
   height: 250px;
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateY(0deg);
-  transition: transform 0.1s ease;
+  transition: transform 0.25s ease;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .cube-content {
