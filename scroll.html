@@ -91,13 +91,31 @@
         </div>
     </section>
     <!-- services -->
-    <section id="services" class="section h-auto">
+    <section id="services" class="section h-[40vh]">
         <div class="text-center uppercase text-3xl pb-3">
             <h2>Our <span class="text-blue-500">Services</span></h2>
         </div>
+    </section>
+    <!-- contact -->
+    <section id="tours" class="section h-[40vh]">
+        <div class="text-center uppercase text-3xl">
+            <h2>featured <span class="text-blue-500">tours</span></h2>
+        </div>
+    </section>
+    <a class="scroll-link top-link" href="#home">
+        <img src="https://cdn-icons-png.flaticon.com/512/4196/4196777.png" alt="">
+    </a>
+    <section class="flex ">
+        <button href="" id="openBtn" class="tops-link">
+            <img src="https://w7.pngwing.com/pngs/629/455/png-transparent-desktop-star-color-hearts-special-offer-leaf-text-label.png" class="h-[4rem] w-[4rem] bg-transparent cursor-pointer" alt="">
+        </button>
 
-        <div class="flex mx-5 border border-transparent shadow-2xl rounded-2xl flex-col relative bg-amber-300 justify-center items-center -z-10">
-            <h1 class="text-3xl font-bold pb-2 tracking-[0.2rem]">COUNTDOWN</h1>
+   <div id="backdrop" class="fixed inset-0 bg-black/50 bg-opacity-60 opacity-0 invisible pointer-events-none transition-opacity duration-300 flex items-end" aria-hidden="true">
+    <!-- Bottom Sheet Modal -->
+    <div class="bg-amber-300 relative flex flex-col justify-center items-center rounded-t-2xl shadow-xl w-full h-[30vh] p-5 transform translate-y-full transition-transform duration-300 z-[1000]" role="document">
+        <button id="closeBtn" class="text-gray-500 hover:text-gray-700 text-lg bg-amber-50 border border-transparent rounded-full px-3 py-1 -translate-y-12">X</button>
+        <h1 class="text-3xl font-bold pb-2 tracking-[0.2rem]">COUNTDOWN</h1>
+           
             <h2 class="text-xl giveaway pb-2"></h2>
             <div class="deadline flex">
                 <!-- days -->
@@ -135,23 +153,16 @@
 
             </div>
         </div>
-    </section>
-    <!-- contact -->
-    <section id="tours" class="section h-[80vh]">
-        <div class="text-center uppercase text-3xl">
-            <h2>featured <span class="text-blue-500">tours</span></h2>
-        </div>
-    </section>
-    <!-- footer -->
+
+   </div>
+  </section>
+       <!-- footer -->
     <footer class="section bg-cyan-950 px-20 py-4">
         <p class="text-white text-center capitalize mb-0 ">
             copyright &copy; Backroads Travel Tours Company
             <span id="date"></span>. All Rights Reserved
         </p>
     </footer>
-    <a class="scroll-link top-link" href="#home">
-        <img src="https://cdn-icons-png.flaticon.com/512/4196/4196777.png" alt="">
-    </a>
     
 </body>
 </html>

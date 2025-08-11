@@ -69,6 +69,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const navbar = document.querySelector(".nav")
     const toplink = document.querySelector(".top-link")
+    const topslink = document.querySelector(".tops-link")
 
     window.addEventListener("scroll", function () {
 
@@ -85,6 +86,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
             toplink.classList.add("show-link")
         } else {
             toplink.classList.remove("show-link")
+        }
+
+        if (scrollheight > 0) {
+            topslink.classList.add("show-link")
+        } else {
+            topslink.classList.remove("show-link")
         }
     })
 
@@ -145,7 +152,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let tempMonth = tempDate.getMonth()
     let tempDay = tempDate.getDate()
 
-    const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0)
+    const futureDate = new Date(tempYear, tempMonth, tempDay + 1, 11, 30, 0)
     const year = futureDate.getFullYear()
     const hours = futureDate.getHours()
     const minutes = futureDate.getMinutes()
@@ -184,10 +191,45 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         if (t < 0) {
             clearInterval(countdown)
-            deadline.innerHTML = `<h4 class="expired">Sorry, This giveaway has Expired</h4>`
+            deadline.innerHTML = `<h4 class="expired text-xl pb-2">Sorry, This giveaway has Expired</h4>`
         }
     }
     let countdown = setInterval(getRemaindingTime, 1000)
     getRemaindingTime()
+
+
+    // offer logo
+
+    const openBtn = document.getElementById('openBtn');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('closeBtn');
+    const modal = backdrop.querySelector('div[role="document"]');
+
+    function openModal(){
+      backdrop.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+      modal.classList.remove('translate-y-full');
+      modal.classList.add('translate-y-0');
+      document.body.classList.add('overflow-hidden');
+      document.addEventListener('keydown', onKeyDown);
+    }
+
+    function closeModal(){
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      backdrop.classList.remove('opacity-100');
+      modal.classList.add('translate-y-full');
+      modal.classList.remove('translate-y-0');
+      setTimeout(() => backdrop.classList.add('invisible'), 300);
+      document.body.classList.remove('overflow-hidden');
+      document.removeEventListener('keydown', onKeyDown);
+    }
+
+    function onKeyDown(e){
+      if(e.key === 'Escape') closeModal();
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e) => { if(e.target === backdrop) closeModal(); });
 
 })

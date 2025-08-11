@@ -235,9 +235,25 @@ body {
   visibility: hidden;
   z-index: -100;
 }
+.tops-link {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 5rem;
+  left: 1.5rem;
+  background: transparent;
+  width: 6rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  animation: bounce 1s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+}
 .show-link {
   visibility: visible;
-  z-index: 100;
+  z-index: 10;
 }
 
 @keyframes bounce {
