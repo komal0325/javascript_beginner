@@ -284,7 +284,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             list.appendChild(element)
             displayAlert("item added to the list", "success")
             container.classList.remove("invisible")
-            console.log(container)
             addToLocalStorage(id, value)
             setBackToDefault()
         }
@@ -318,7 +317,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             })
         }
         container.classList.add("invisible")
-        console.log(container)
         displayAlert("empty list", "danger")
         setBackToDefault()
         localStorage.removeItem("list")
@@ -327,13 +325,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
     // delete items
     function deleteItem(e) {
         const element = e.currentTarget.parentElement.parentElement
-        // const id = element.dataset.id
+        const id = element.dataset.id
 
         list.removeChild(element)
 
         if (list.children.length === 0) {
             container.classList.add("invisible")
-            console.log(container)
         }
         displayAlert("item removed", "danger")
 
@@ -376,6 +373,66 @@ window.addEventListener('DOMContentLoaded', (e) => {
         : []
     }
 
-    function removeFromLocalStorage(id) {}
-    function editLocalStorage(id, value) {}
+    function removeFromLocalStorage(id) {
+        let items = getLocalStorage()
+
+        items = items.filter(function (item){
+            if (item.id !== id){
+                return item
+            }
+        })
+        localStorage.setItem("list", JSON.stringify(items))
+    }
+
+    function editLocalStorage(id, value) {
+        // let items = localStorage()
+
+        // items = items.map(function (item){
+        //     if(item.id === id){
+        //         item.value = value
+        //     }
+        //     return item
+        // })
+        // localStorage.setItem("list", JSON.stringify(items))
+    }
+
+    // setup LocalStorage.RemoveItem('List')
+
+    function setupItems() {
+        let items = getLocalStorage()
+
+        if (items.length > 0) {
+            items.forEach(function (item){
+                createListItem(item.id, item.value)
+            })
+            container.classList.remove('invisible')
+        }
+    }
+
+    function createListItem(id, value){
+        const element = document.createElement("article")
+        let attr = document.createAttribute("data-id")
+        attr.value = id
+        element.setAttributeNode(attr)
+        element.classList.add("grocery-item");
+        element.innerHTML = `<p class="title">${value}</p>
+                <div class="btn-container">
+                    <!-- edit btn -->
+                    <button type="button" class="edit-btn">
+                       <i class="fas fa-edit"></i>
+                     </button>
+                    <!-- delete btn -->
+                    <button type="button" class="delete-btn">
+                       <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                 `;
+
+    const deleteBtn = element.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    const editBtn = element.querySelector(".edit-btn");
+    editBtn.addEventListener("click", editItem);
+
+    list.appendChild(element)
+    }
 })
