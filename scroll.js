@@ -269,10 +269,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
             element.innerHTML = `<p class="title">${value}</p>
                         <div class="btn-container">
                             <button type="button" class="edit-btn">
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit text-lg"></i>
                             </button>
                             <button type="button" class="delete-btn">
-                                <i class="fas fa-trash"></i>
+                                <i class="fas fa-trash text-lg"></i>
                             </button>
                         </div>`
 
@@ -285,13 +285,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
             displayAlert("item added to the list", "success")
             container.classList.remove("invisible")
             console.log(container)
-            // addToLocalStorage(id, value)
+            addToLocalStorage(id, value)
             setBackToDefault()
         }
         else if (value !== "" && editFlag) {
             editElement.innerHTML = value
             displayAlert("value changed", "success")
-            editToLocalStorage(editID, value)
+            editLocalStorage(editID, value)
             setBackToDefault()
         }
         else {
@@ -339,7 +339,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         setBackToDefault()
 
-        // removeFromLocalStorage(id)
+        removeFromLocalStorage(id)
     }
 
 
@@ -361,6 +361,21 @@ window.addEventListener('DOMContentLoaded', (e) => {
         submitBtn.textContent = "submit"
     }
 
+    // add local storage
 
+    function addToLocalStorage(id, value) {
+        const grocery = { id, value}
+        let items = getLocalStorage()
+        items.push(grocery)
+        localStorage.setItem("list", JSON.stringify(items))
+    }
 
+    function getLocalStorage() {
+        return localStorage.getItem("list")
+        ? JSON.parse(localStorage.getItem("list"))
+        : []
+    }
+
+    function removeFromLocalStorage(id) {}
+    function editLocalStorage(id, value) {}
 })

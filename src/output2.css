@@ -508,9 +508,6 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
@@ -701,9 +698,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -745,9 +739,6 @@
   }
   .w-\[100px\] {
     width: 100px;
-  }
-  .w-auto {
-    width: auto;
   }
   .w-full {
     width: 100%;
@@ -1513,9 +1504,6 @@
   .bg-amber-300 {
     background-color: var(--color-amber-300);
   }
-  .bg-black {
-    background-color: var(--color-black);
-  }
   .bg-black\/40 {
     background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
   }
@@ -1765,12 +1753,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -3227,17 +3209,21 @@ body {
   height: 1.5rem;
   display: grid;
   align-items: center;
-  background: transparent;
-  border-color: transparent;
+  background: rgba(255, 0, 0, 0.158);
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  border-color: var(--clr-red-dark);
   color: var(--clr-red-light);
   margin: 0 auto;
   font-size: 0.85rem;
   letter-spacing: var(--spacing);
   cursor: pointer;
+  transition: var(--transition);
   margin-top: 1.25rem;
 }
 .clear-btn:hover {
   color: var(--clr-red-dark);
+  background: rgba(255, 0, 0, 0.479);
 }
 @property --tw-translate-x {
   syntax: "*";

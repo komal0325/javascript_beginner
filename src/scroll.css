@@ -441,16 +441,19 @@ body {
   height: 1.5rem;
   display: grid;
   align-items: center;
-  background: transparent;
-  border-color: transparent;
+  background: rgba(255, 0, 0, 0.158);
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  border-color: var(--clr-red-dark);
   color: var(--clr-red-light);
   margin: 0 auto;
   font-size: 0.85rem;
   letter-spacing: var(--spacing);
   cursor: pointer;
-  /* transition: var(--transition); */
+  transition: var(--transition);
   margin-top: 1.25rem;
 }
 .clear-btn:hover {
   color: var(--clr-red-dark);
+  background: rgba(255, 0, 0, 0.479);
 }
