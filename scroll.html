@@ -6,6 +6,7 @@
     <title>js Projex</title>
     <link rel="stylesheet" href="src/output2.css">
     <script src="scroll.js"></script>
+    <script src="https://kit.fontawesome.com/ca27198009.js" crossorigin="anonymous"></script>
 </head>
 <body >
     <div id="home">
@@ -91,9 +92,36 @@
         </div>
     </section>
     <!-- services -->
-    <section id="services" class="section h-[40vh]">
+    <section id="services" class="section h-auto">
         <div class="text-center uppercase text-3xl pb-3">
             <h2>Our <span class="text-blue-500">Services</span></h2>
+        </div>
+        <!-- grocery-item list -->
+        <div class="section-center">
+            <form action="" class="grocery-form ">
+                <p class="alert mb-1 h-5 grid items-center text-center size-3 border rounded-md tracking-wider capitalize"></p>
+                <h3 class="mb-6 text-center">Grocery List</h3>
+                <div class="form-control flex justify-center">
+                    <input type="text" id="grocery" placeholder="e.g. eggs" />
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+            <div class="grocery-container mt-8 transition-all duration-300 invisible">
+                <div class="grocery-list">
+                    <article class="grocery-item">
+                        <p class="title">item</p>
+                        <div class="btn-container">
+                            <button type="button" class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+                <button class="clear-btn">clear items</button>
+            </div>
         </div>
     </section>
     <!-- contact -->
