@@ -385,15 +385,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
     function editLocalStorage(id, value) {
-        // let items = localStorage()
+        let items = getLocalStorage()
 
-        // items = items.map(function (item){
-        //     if(item.id === id){
-        //         item.value = value
-        //     }
-        //     return item
-        // })
-        // localStorage.setItem("list", JSON.stringify(items))
+        items = items.map(function (item){
+            if(item.id === id){
+                item.value = value
+            }
+            return item
+        })
+        localStorage.setItem("list", JSON.stringify(items))
     }
 
     // setup LocalStorage.RemoveItem('List')
