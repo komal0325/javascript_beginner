@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
         color.textContent = colors[randomNumber]
     })
 
-    btn = document.getElementById('menu-btn')
+    btn = document.getElementById()
     nav = document.getElementById('menu')
 
     btn.addEventListener('click', function () {
